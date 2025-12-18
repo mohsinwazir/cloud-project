@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="products-header">
+    <h2>Our Collection</h2>
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Computers">Computers</button>
+        <button class="filter-btn" data-filter="Phones">Phones</button>
+        <button class="filter-btn" data-filter="Wearables">Wearables</button>
+        <button class="filter-btn" data-filter="Audio">Audio</button>
+        <button class="filter-btn" data-filter="Accessories">Accessories</button>
+        <button class="filter-btn" data-filter="Home">Home</button>
+    </div>
+</section>
+
+<section class="products-grid">
+    {% for product in products %}
+    <div class="product-card" data-category="{{ product.category }}">
+        <div class="product-image">
+            <div class="placeholder-icon">
+                {% if product.category == 'Computers' %} <i class="fa-solid fa-laptop"></i>
+                {% elif product.category == 'Phones' %} <i class="fa-solid fa-mobile-screen"></i>
+                {% elif product.category == 'Wearables' %} <i class="fa-solid fa-clock"></i>
+                {% elif product.category == 'Audio' %} <i class="fa-solid fa-headphones"></i>
+                {% elif product.category == 'Home' %} <i class="fa-solid fa-house-signal"></i>
+                {% else %} <i class="fa-solid fa-box-open"></i>
+                {% endif %}
+            </div>
+        </div>
+        <div class="product-info">
+            <span class="category-tag">{{ product.category }}</span>
+            <h3>{{ product.name }}</h3>
+            <div class="price-action">
+                <span class="price">${{ product.price }}</span>
+                <button class="add-cart-btn" onclick="addToCart('{{ product.name }}', {{ product.price }})">
+                    <i class="fa-solid fa-plus"></i> Add
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Future Tech, <span class="gradient-text">Today.</span></h1>
+        <p>Experience the next generation of cloud-connected devices. Premium quality, unbeatable performance.</p>
+        <a href="{{ url_for('products_page') }}" class="cta-button">
+            Start Shopping <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+    <div class="hero-visual">
+        <div class="floating-card c1"><i class="fa-solid fa-laptop"></i></div>
+        <div class="floating-card c2"><i class="fa-solid fa-headset"></i></div>
+        <div class="floating-card c3"><i class="fa-solid fa-mobile-screen"></i></div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Lightning Fast</h3>
+        <p>Next-day delivery on all cloud essentials.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Secure</h3>
+        <p>Your transactions are protected by industry standards.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fa-solid fa-rotate"></i>
+        <h3>Easy Returns</h3>
+        <p>30-day money-back guarantee on everything.</p>
+    </div>
+</section>
+{% endblock %}

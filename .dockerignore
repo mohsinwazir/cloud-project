@@ -1,0 +1,16 @@
+.git
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+# Exclude DB setup files as requested
+db_setup.sql
+seed_db.py
+# Exclude local SQLite DBs if any
+*.db
+*.sqlite
+# Exclude OS generated files
+.DS_Store
+Thumbs.db
